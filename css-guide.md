@@ -1,10 +1,17 @@
 # CSS
-An opinionated guide
+*An opinionated guide*
+
+## Table of Contents
+
+  1. [Functional CSS](#functional-css)
+  1. [Cascading](#cascading)
+  1. [Style only classes](#style-only-classes)
+  1. [Keep css easy to read](#keep-css-easy-to-read)
 
 ----
 
 ## Functional CSS
-## Utility classes
+[1](#functional-css)
 
 #### PRO
 - Simple to use for people unfamiliar with CSS
@@ -29,7 +36,7 @@ An opinionated guide
 
 // good
 // SUIT
-<h1 class=”Component-heading”>Hello</h1>
+<h1 class="Component-heading">Hello</h1>
 ```
 
 ```css
@@ -51,3 +58,120 @@ An opinionated guide
 ```
 
 ----
+
+## Cascading
+[1](#cascading)
+
+CSS becomes easier when you stop using cascading.
+
+```html
+// bad
+<h1 class="Banner-margin"></h1>
+<img class="Banner-margin">
+<button class="Banner-margin"></button>
+```
+```css
+.Banner-margin {
+  margin-bottom: 12px;
+}
+```
+
+```html
+// good
+<h1 class="Banner-heading"></h1>
+<img class="Banner-picture">
+<button class="Banner-button"></button>
+```
+```css
+.Banner-heading {
+  margin-bottom: 12px;
+}
+
+.Banner-picture {
+  margin-bottom: 16px;
+}
+
+.Banner-button {
+  margin-bottom: 24px;
+}
+```
+
+----
+
+## Style only classes
+[1](#style-only-classes)
+
+```html
+// bad
+// styling element
+<div class="Banner">
+  <button></button>
+  <button class="OtherButton"></button>
+</div>
+```
+```css
+// bad
+// styling element
+.Banner button {
+  height: 24px; // higher specificity
+}
+
+.Banner .OtherButton {
+  height: 16px;
+}
+```
+
+```html
+// good
+// styling classes
+<div class="Banner">
+  <button class="Banner-buttonPrimary"></button>
+  <button class="Banner-buttonSecondary"></button>
+</div>
+```
+```css
+// good
+.Banner-buttonPrimary {
+  height: 24px;
+}
+
+.Banner-buttonSecondary {
+  height: 16px;
+}
+```
+
+----
+
+## Keep CSS easy to read
+[1](#keep-css-easy-to-read)
+
+```css
+// bad
+.mfn {
+  margin-bottom: 24px;
+}
+
+// bad
+$button-padding-bottom: 16px;
+
+.Button {
+  padding-bottom: $button-padding-bottom;
+}
+
+// bad
+@mixin button-padding($size, $color) {
+  font-size: $size;
+  color: $color;
+}
+
+.Button {
+  @include button-padding(16px, red);
+}
+
+// good
+.Button {
+  font-size: 16px;
+  color: red;
+}
+```
+

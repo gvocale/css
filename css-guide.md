@@ -62,7 +62,14 @@
 ## Cascading
 [1](#cascading)
 
-CSS becomes easier when you stop using cascading.
+- CSS (Cascading Style Sheet) becomes easier when you STOP using cascading.
+- Think separation of concerns, single responsability principle, loose coupling.
+- Build a whole bunch of tiny little CSS modules that:
+  - Can't know about the other ones near them
+  - Need to be able to operate on their own
+  - Can't be too dependent on what's above them or below them
+
+** Add visual example here of visual margin difference on headline and color blocks **
 
 ```html
 // bad

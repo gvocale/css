@@ -7,11 +7,12 @@
   1. [Cascading](#cascading)
   1. [Style only classes](#style-only-classes)
   1. [Keep css easy to read](#keep-css-easy-to-read)
+  1. [Keep breakpoints within their class](#keep-breakpoints-within-their-class)
 
 ----
 
 ## Functional CSS
-[1](#functional-css)
+- [2](#functional-css) While it's great for quickly building pages, it starts to get in the way when building something more complex and custom.
 
 #### PRO
 - Simple to use for people unfamiliar with CSS
@@ -60,11 +61,9 @@
 ----
 
 ## Cascading
-[1](#cascading)
+- [2](#cascading) CSS (Cascading Style Sheet) becomes easier when you STOP using cascading.
 
-- CSS (Cascading Style Sheet) becomes easier when you STOP using cascading.
-- Think separation of concerns, single responsability principle, loose coupling.
-- Build a whole bunch of tiny little CSS modules that:
+> Why? Think separation of concerns, single responsability principle, loose coupling. Build a whole bunch of tiny little CSS modules that:
   - Can't know about the other ones near them
   - Need to be able to operate on their own
   - Can't be too dependent on what's above them or below them
@@ -106,7 +105,10 @@
 ----
 
 ## Style only classes
-[1](#style-only-classes)
+
+- [3](#style-only-classes) Style only classes and use SUIT classname convention.
+
+> Why? Styling element bumps the specificity of a style. It's very easy to think there will only be one <button> inside .Banner, until soon after you'll need to add one more and overriding styling will be much more complicate.
 
 ```html
 // bad
@@ -150,7 +152,10 @@
 ----
 
 ## Keep CSS easy to read
-[1](#keep-css-easy-to-read)
+
+- [4](#keep-css-easy-to-read)
+
+> Why? CSS property are very descriptive and easy to read. Abusing of mixins and functions makes less intuitive to understand the styling. Short acronyms are difficult to decipher as well.
 
 ```css
 // bad
@@ -182,3 +187,232 @@ $button-padding-bottom: 16px;
 }
 ```
 
+----
+
+## Breakpoints
+
+- [5.1](#breakpoints--keep-within-their-class) Group breakpoints inside each class. Don't put them at the end of the page, or even worse in a different file.
+
+> Why? It is clearer to see how each class changes between resolution when they're grouped together by classname.
+
+```css
+// terrible
+// scss/homepage/_breakpoints.scss
+
+@media screen and (min-width 768px) {
+
+  .Button {
+    height: 24px;
+  }
+
+  .Heading {
+    font-size: 32px;
+  }
+}
+```
+
+
+```css
+// bad
+// scss/_component.scss
+
+.Button {
+  height: 12px;
+}
+
+.Heading {
+  font-size: 24px;
+}
+
+.Image {
+  width: 50%;
+}
+
+@media screen and (min-width 768px) {
+
+  .Button {
+    height: 14px;
+  }
+
+  .Heading {
+    font-size: 28px;
+  }
+
+  .Image {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width 1200px) {
+
+  .Button {
+    height: 16px;
+  }
+
+  .Heading {
+    font-size: 32px;
+  }
+
+  .Image {
+    width: 80%;
+  }
+}
+```
+
+```css
+// good
+
+.Button {
+  height: 12px;
+
+  @media (min-width 768px) {
+    height: 14px;
+  }
+
+  @media (min-width 1200px) {
+    height: 16px;
+  }
+}
+
+.Heading {
+  font-size: 24px;
+
+  @media (min-width 768px) {
+    height: 28px;
+  }
+
+  @media (min-width 1200px) {
+    height: 32px;
+  }
+}
+```
+
+- [5.2](#breakpoints--use-only-one-direction) Use only min-width, one direction from smaller screen size to larger.
+
+> Why? Ideally we desing `mobile first`. Also, traditionally screen resolutions are getting larger, rather then the opposite.
+
+```css
+// bad
+
+.Button {
+  height: 16px;
+
+  @media (max-width 1200px) {
+    height: 14px;
+  }
+
+  @media (max-width 768px) {
+    height: 12px;
+  }
+}
+```
+
+```css
+// good
+
+.Button {
+  height: 12px;
+
+  @media (min-width 768px) {
+    height: 14px;
+  }
+
+  @media (min-width 1200px) {
+    height: 16px;
+  }
+}
+```
+
+----
+
+## Margins and Paddings
+
+- [6.1](#margins--go-one-direction) Use only one direction, downwards.
+
+> Why? It is very confusing when a margin bottom and a following margin bottom blend into each other.
+
+```css
+// bad
+
+.Image {
+  margin-bottom: 32px;
+}
+
+.Caption {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.Time {
+  ...
+}
+```
+
+```css
+// good
+
+.Image {
+  margin-bottom: 32px;
+}
+
+.Caption {
+  margin-bottom: 4px;
+}
+```
+
+- [6.2](#margins--padding) Use mostly paddings.
+
+> Why? They don't interfere with each other.
+
+
+- [6.3](#margins--put-margin-to-parent-wrapper) Keep components without margin. Add wrapper elements on case by case for margins.
+
+```html
+// bad
+<div class="Homepage">
+  {{bsk-button}}
+  {{bsk-button}}
+</div>
+
+<div class="Homepage">
+  {{bsk-button class='bsk-Button--noMargin'}}
+  <i>icon</i>
+</div>
+
+//
+```
+```css
+// bad
+.Homepage .bsk-Button {
+  margin-right: 8px;
+}
+
+.bsk-Button--noMargin {
+  margin-right: 0;
+}
+```
+
+```html
+// good
+<ul class="Homepage-buttons">
+  <li class="Homepage-button">
+    {{bsk-button}}
+  </li>
+  <li class="Homepage-button">
+    {{bsk-button}}
+  </li>
+</div>
+
+<div class="Homepage-buttons">
+  <div class="Homepage-button">
+    {{bsk-button}}
+  </div>
+  <i class="bsk-icon-form"></i>
+</div>
+//
+```
+```css
+.Homepage-button {
+  margin-right: 8px;
+}
+```

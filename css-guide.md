@@ -416,3 +416,22 @@ $button-padding-bottom: 16px;
   margin-right: 8px;
 }
 ```
+
+----
+
+## Component, not pages
+
+- [7.1](#component) Everything is a component. Create small readable components.
+
+- [7.2](#component) If a component can display content in two different ways, then sounds to me they are different enough to be two different components. Keep component small, doing one thing only. Easier to debug. Easier to visualize.
+
+----
+
+## Animation
+
+- [8.1](#animation--bezier) Use our custom bezier curve rather then simple ease-in-out. Feels more organic. Less regular.
+
+- [8.2](#animation--faster-slower) Animate hover faster, otherwise the element feel 'slow' to react. Power users will like something that feels snappy and quick. On hover out, the animation can be slower.
+Button: https://jsbin.com/pobobol/edit?html,css,output
+Toggle: https://jsbin.com/bakover/edit?html,css,output
+Card: https://jsbin.com/qikuruq/edit?html,css,output

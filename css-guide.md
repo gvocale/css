@@ -435,3 +435,11 @@ $button-padding-bottom: 16px;
 Button: https://jsbin.com/pobobol/edit?html,css,output
 Toggle: https://jsbin.com/bakover/edit?html,css,output
 Card: https://jsbin.com/qikuruq/edit?html,css,output
+
+----
+
+## Typography
+
+- [8.1](#typograhy--scale) Type scale, line-height, font-weight, letter-spacing.
+
+Scale: https://jsbin.com/joqoduy/edit?html,css,output

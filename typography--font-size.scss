@@ -1,0 +1,95 @@
+
+:root {
+  /* Type scale */
+  --bsk-font-size-0: 9.989px;
+  --bsk-font-size-1: 11.237px;
+  --bsk-font-size-2: 12.642px;
+  --bsk-font-size-3: 14.222px;
+  --bsk-font-size-4: 16px;
+  --bsk-font-size-5: 18px;
+  --bsk-font-size-6: 20.25px;
+  --bsk-font-size-7: 22.781px;
+  --bsk-font-size-8: 25.629px;
+  --bsk-font-size-9: 28.833px;
+  --bsk-font-size-10: 32.437px;
+  --bsk-font-size-11: 36.491px;
+  --bsk-font-size-12: 41.053px;
+  --bsk-font-size-13: 46.184px;
+  --bsk-font-size-14: 51.957px;
+  --bsk-font-size-15: 58.452px;
+  --bsk-font-size-16: 65.758px;
+  --bsk-font-size-17: 73.978px;
+  --bsk-font-size-18: 83.225px;
+  --bsk-font-size-19: 93.628px;
+  --bsk-font-size-20: 105.332px;
+
+  /* Font Weight */
+  --bsk-font-weight-200: 200;
+  --bsk-font-weight-300: 300;
+  --bsk-font-weight-400: 400;
+  --bsk-font-weight-500: 500;
+  --bsk-font-weight-600: 600;
+  --bsk-font-weight-700: 700;
+
+  /* Letter Spacing */
+  --letter-spacing-large-1: 0.03em;
+  --letter-spacing-large-2: 0.1em;
+  --letter-spacing-large-3: 0.15em;
+  --letter-spacing-tight-1: -0.005em;
+  --letter-spacing-tight-2: -0.01em;
+  --letter-spacing-tight-3: -0.025em;
+  --letter-spacing-tight-4: -0.035em;
+
+  /* Font Family */
+  --bsk-font-graphik: 'Graphik', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --bsk-font-roboto: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+.Grid {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  grid-column-gap: 32px;
+}
+
+.Heading {
+  font-family: var(--bsk-font-graphik);
+  font-weight: 700;
+  grid-column: 1/2;
+  letter-spacing: var(--bsk-letter-spacing-tight-2);
+  line-height: 1.4;
+  white-space: nowrap;
+  box-shadow: inset 0 2px 0 0 hsla(0, 0%, 0%, 1);
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.Body-graphik {
+  font-family: var(--bsk-font-graphik);
+  font-weight: 400;
+  grid-column: 2/3;
+  letter-spacing: var(--bsk-letter-spacing-tight-2);
+  line-height: 1.4;
+  white-space: nowrap;
+  box-shadow: inset 0 2px 0 0 hsla(0, 0%, 0%, 1);
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.Body-roboto {
+  font-family: var(--bsk-font-roboto);
+  font-weight: 400;
+  grid-column: 3/3;
+  line-height: 1.4;
+  white-space: nowrap;
+  box-shadow: inset 0 2px 0 0 hsla(0, 0%, 0%, 1);
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+@for $i from 1 through 20 {
+  .Size-#{$i} {
+    font-size: var(--bsk-font-size-#{$i});
+    grid-row-start: #{$i}
+  }
+}
+

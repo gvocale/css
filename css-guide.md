@@ -429,6 +429,11 @@ $button-padding-bottom: 16px;
 
 ## Animation
 
+- [8.0](#animation--guideline). Should be fast, snappy, sometimes almost invisible.
+- In experience, give a feedback to a button pushed, signify what's happening or something point the user to something they should be paying attention to (scroll down arrow on better.com).
+- In data visualization, to simplify transition.
+- Stick to `transform` and `opacity` if possible, which are the ones GPU optimized
+
 - [8.1](#animation--bezier) Use our custom bezier curve rather then simple ease-in-out. Feels more organic. Less regular.
 
 - [8.2](#animation--faster-slower) Animate hover faster, otherwise the element feel 'slow' to react. Power users will like something that feels snappy and quick. On hover out, the animation can be slower.
@@ -443,3 +448,5 @@ Card: https://jsbin.com/qikuruq/edit?html,css,output
 - [8.1](#typograhy--scale) Type scale, line-height, font-weight, letter-spacing.
 
 Scale: https://jsbin.com/joqoduy/edit?html,css,output
+
+Add example of line height, weight and letter spacing changing at different sizes and typeface.

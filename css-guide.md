@@ -449,4 +449,4 @@ Card: https://jsbin.com/qikuruq/edit?html,css,output
 
 Scale: https://jsbin.com/joqoduy/edit?html,css,output
 
-Add example of line height, weight and letter spacing changing at different sizes and typeface.
+Add example of line height, weight and letter spacing changing at different sizes and typeface. Add large graphik numbers, add small roboto numbers. Add hover color on typographic word hovered. Add gray lines also for empty grid boxes

@@ -1,4 +1,3 @@
-
 :root {
   /* Type scale */
   --bsk-font-size-0: 9.989px;
@@ -32,64 +31,217 @@
   --bsk-font-weight-700: 700;
 
   /* Letter Spacing */
-  --letter-spacing-large-1: 0.03em;
-  --letter-spacing-large-2: 0.1em;
-  --letter-spacing-large-3: 0.15em;
-  --letter-spacing-tight-1: -0.005em;
-  --letter-spacing-tight-2: -0.01em;
-  --letter-spacing-tight-3: -0.025em;
-  --letter-spacing-tight-4: -0.035em;
+  --bsk-letter-spacing-large-1: 0.03em;
+  --bsk-letter-spacing-large-2: 0.1em;
+  --bsk-letter-spacing-large-3: 0.15em;
+  --bsk-letter-spacing-tight-1: -0.005em;
+  --bsk-letter-spacing-tight-2: -0.01em;
+  --bsk-letter-spacing-tight-3: -0.025em;
+  --bsk-letter-spacing-tight-4: -0.035em;
 
   /* Font Family */
-  --bsk-font-graphik: 'Graphik', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  --bsk-font-roboto: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --bsk-font-graphik: 'Graphik', sans-serif;
+  --bsk-font-roboto: 'Roboto', sans-serif;
+
+  --bsk-color-eggplant: hsla(264, 47%, 18%, 1);
+  --bsk-color-slime: hsla(166, 82%, 57%, 1);
+  --bsk-color-fuchsia: hsla(327, 82%, 48%, 1);
+  --bezier: cubic-bezier(0.32, 0.01, 0, 1);
 }
 
-.Grid {
+.grid {
+  color: var(--bsk-color-eggplant);
   display: grid;
-  grid-template-columns: repeat(3, min-content);
-  grid-column-gap: 32px;
+  grid-template-columns: repeat(5, min-content);
+  grid-column-gap: 48px;
+  padding-bottom: 48px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
 }
 
-.Heading {
-  font-family: var(--bsk-font-graphik);
-  font-weight: 700;
-  grid-column: 1/2;
-  letter-spacing: var(--bsk-letter-spacing-tight-2);
-  line-height: 1.4;
+[class*='size'] {
+  padding-top: 0.5em;
+  margin-top: 0;
   white-space: nowrap;
-  box-shadow: inset 0 2px 0 0 hsla(0, 0%, 0%, 1);
-  padding-top: 32px;
-  padding-bottom: 32px;
 }
 
-.Body-graphik {
+.graphik {
   font-family: var(--bsk-font-graphik);
-  font-weight: 400;
-  grid-column: 2/3;
-  letter-spacing: var(--bsk-letter-spacing-tight-2);
-  line-height: 1.4;
-  white-space: nowrap;
-  box-shadow: inset 0 2px 0 0 hsla(0, 0%, 0%, 1);
-  padding-top: 32px;
-  padding-bottom: 32px;
 }
 
-.Body-roboto {
+.roboto {
   font-family: var(--bsk-font-roboto);
-  font-weight: 400;
-  grid-column: 3/3;
-  line-height: 1.4;
-  white-space: nowrap;
-  box-shadow: inset 0 2px 0 0 hsla(0, 0%, 0%, 1);
-  padding-top: 32px;
-  padding-bottom: 32px;
 }
 
-@for $i from 1 through 20 {
-  .Size-#{$i} {
+.number.graphik {
+  font-weight: 200;
+  grid-column: 1/2;
+}
+
+.heading {
+  font-weight: 700;
+  grid-column: 2/3;
+}
+
+.body {
+  font-weight: 400;
+}
+
+.body.graphik {
+  grid-column: 3/4;
+}
+
+.body.roboto {
+  grid-column: 4/5;
+}
+
+.number.roboto {
+  grid-column: 5/6;
+}
+
+[class*='size'] {
+  transition: color 0.25s var(--bezier);
+}
+
+[class*='size']:hover {
+  color: var(--bsk-color-fuchsia);
+  transition-duration: 0s;
+}
+
+@for $i from 0 through 20 {
+  .size-#{$i} {
     font-size: var(--bsk-font-size-#{$i});
-    grid-row-start: #{$i}
+    grid-row-start: #{21 - $i}
   }
 }
 
+
+@for $i from 11 through 20 {
+  .size-#{$i} {
+    line-height: 1.1;
+    margin-bottom: 1em;
+    box-shadow: inset 0 2px 0 0 currentColor;
+  }
+}
+
+@for $i from 6 through 10 {
+  .size-#{$i} {
+    line-height: 1.25;
+    margin-bottom: 1.5em;
+    box-shadow: inset 0 1.5px 0 0 currentColor;
+  }
+}
+
+@for $i from 0 through 5 {
+  .size-#{$i} {
+    line-height: 1.5;
+    margin-bottom: 2em;
+    box-shadow: inset 0 1px 0 0 currentColor;
+  }
+}
+
+@for $i from 11 through 20 {
+  .graphik.size-#{$i} {
+    letter-spacing: var(--bsk-letter-spacing-tight-3);
+  }
+}
+
+@for $i from 6 through 10 {
+  .graphik.size-#{$i} {
+    letter-spacing: var(--bsk-letter-spacing-tight-2);
+  }
+}
+
+@for $i from 0 through 5 {
+  .graphik.size-#{$i} {
+    letter-spacing: var(--bsk-letter-spacing-tight-1);
+  }
+}
+
+@for $i from 11 through 20 {
+  .graphik.number.size-#{$i} {
+    font-weight: 200;
+  }
+}
+
+@for $i from 6 through 10 {
+  .graphik.number.size-#{$i} {
+    font-weight: 300;
+  }
+}
+
+
+@for $i from 0 through 5 {
+  .graphik.number.size-#{$i} {
+    font-weight: 400;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://media.better.com/fonts/graphik/Graphik-Bold-Web.eot');
+  src: url('https://media.better.com/fonts/graphik/Graphik-Bold-Web.eot?#iefix') format('embedded-opentype'),
+       url('https://media.better.com/fonts/graphik/Graphik-Bold-Web.woff2') format('woff2'),
+       url('https://media.better.com/fonts/graphik/Graphik-Bold-Web.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://media.better.com/fonts/graphik/Graphik-Semibold-Web.eot');
+  src: url('https://media.better.com/fonts/graphik/Graphik-Semibold-Web.eot?#iefix') format('embedded-opentype'),
+       url('https://media.better.com/fonts/graphik/Graphik-Semibold-Web.woff2') format('woff2'),
+       url('https://media.better.com/fonts/graphik/Graphik-Semibold-Web.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://media.better.com/fonts/graphik/Graphik-Medium-Web.eot');
+  src: url('https://media.better.com/fonts/graphik/Graphik-Medium-Web.eot?#iefix') format('embedded-opentype'),
+       url('https://media.better.com/fonts/graphik/Graphik-Medium-Web.woff2') format('woff2'),
+       url('https://media.better.com/fonts/graphik/Graphik-Medium-Web.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://media.better.com/fonts/graphik/Graphik-Regular-Web.eot');
+  src: url('https://media.better.com/fonts/graphik/Graphik-Regular-Web.eot?#iefix') format('embedded-opentype'),
+       url('https://media.better.com/fonts/graphik/Graphik-Regular-Web.woff2') format('woff2'),
+       url('https://media.better.com/fonts/graphik/Graphik-Regular-Web.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://media.better.com/fonts/graphik/Graphik-Light-Web.eot');
+  src: url('https://media.better.com/fonts/graphik/Graphik-Light-Web.eot?#iefix') format('embedded-opentype'),
+       url('https://media.better.com/fonts/graphik/Graphik-Light-Web.woff2') format('woff2'),
+       url('https://media.better.com/fonts/graphik/Graphik-Light-Web.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://media.better.com/fonts/graphik/Graphik-Thin-Web.eot');
+  src: url('https://media.better.com/fonts/graphik/Graphik-Thin-Web.eot?#iefix') format('embedded-opentype'),
+       url('https://media.better.com/fonts/graphik/Graphik-Thin-Web.woff2') format('woff2'),
+       url('https://media.better.com/fonts/graphik/Graphik-Thin-Web.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+}

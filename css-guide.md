@@ -447,6 +447,12 @@ Card: https://jsbin.com/qikuruq/edit?html,css,output
 
 - [8.1](#typograhy--scale) Type scale, line-height, font-weight, letter-spacing.
 
-Scale: https://jsbin.com/joqoduy/edit?html,css,output
+Scale: https://jsfiddle.net/gvocale/Lsdcotq5/19/
 
-Add example of line height, weight and letter spacing changing at different sizes and typeface. Add large graphik numbers, add small roboto numbers. Add hover color on typographic word hovered. Add gray lines also for empty grid boxes
+----
+
+## Data attribute
+
+- [8.1](#data-attribute)
+
+Example: https://jsfiddle.net/gvocale/m8g6qfrc/16/

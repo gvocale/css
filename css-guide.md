@@ -195,97 +195,9 @@ $button-padding-bottom: 16px;
 
 > Why? It is clearer to see how each class changes between resolution when they're grouped together by classname.
 
-```css
-// terrible
-// scss/homepage/_breakpoints.scss
-
-@media screen and (min-width 768px) {
-
-  .Button {
-    height: 24px;
-  }
-
-  .Heading {
-    font-size: 32px;
-  }
-}
-```
+https://jsfiddle.net/gvocale/5jm67ton/11/
 
 
-```css
-// bad
-// scss/_component.scss
-
-.Button {
-  height: 12px;
-}
-
-.Heading {
-  font-size: 24px;
-}
-
-.Image {
-  width: 50%;
-}
-
-@media screen and (min-width 768px) {
-
-  .Button {
-    height: 14px;
-  }
-
-  .Heading {
-    font-size: 28px;
-  }
-
-  .Image {
-    width: 75%;
-  }
-}
-
-@media screen and (min-width 1200px) {
-
-  .Button {
-    height: 16px;
-  }
-
-  .Heading {
-    font-size: 32px;
-  }
-
-  .Image {
-    width: 80%;
-  }
-}
-```
-
-```css
-// good
-
-.Button {
-  height: 12px;
-
-  @media (min-width 768px) {
-    height: 14px;
-  }
-
-  @media (min-width 1200px) {
-    height: 16px;
-  }
-}
-
-.Heading {
-  font-size: 24px;
-
-  @media (min-width 768px) {
-    height: 28px;
-  }
-
-  @media (min-width 1200px) {
-    height: 32px;
-  }
-}
-```
 
 - [5.2](#breakpoints--use-only-one-direction) Use only min-width, one direction from smaller screen size to larger.
 
@@ -456,3 +368,18 @@ Scale: https://jsfiddle.net/gvocale/Lsdcotq5/19/
 - [8.1](#data-attribute)
 
 Example: https://jsfiddle.net/gvocale/pcwudrmc/70450/
+
+----
+
+## Image compression
+
+- [8.1](#Image-compression--imageoptim) Compress larger and more aggressive rather then smaller and less aggressive
+
+**Show two charlie's examples**
+
+Filament group post: https://www.filamentgroup.com/lab/compressive-images.html
+
+- [8.2](#Image-compression--imageoptim) ImageOptim
+
+Example: https://jsfiddle.net/gvocale/pcwudrmc/70450/
+

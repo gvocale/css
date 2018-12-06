@@ -1,0 +1,176 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  grid-column-gap: 64px;
+}
+
+.header {
+  margin-bottom: 64px;
+}
+
+.heading {
+  font-family: var(--bsk-font-graphik);
+  line-height: 1.2;
+  letter-spacing: var(--bsk-letter-spacing-tight-3);
+  font-size: var(--bsk-font-size-14);
+  font-weight: 700;
+  width: 100%;
+  max-width: 15em;
+}
+
+.figure {
+  margin: 0;
+}
+
+.image {
+  width: 540px;
+  height: 540px;
+}
+
+.caption {
+  font-family: var(--bsk-font-graphik);
+  line-height: 1.4;
+  letter-spacing: var(--bsk-letter-spacing-tight-3);
+  font-size: var(--bsk-font-size-3);
+  font-weight: 600;
+  width: 100%;
+  padding-top: 16px;
+}
+
+.warning {
+  color: var(--color-rouge);
+}
+
+.success {
+  color: var(--color-slime-text);
+}
+
+body {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  color: var(--bsk-color-eggplant);
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://media.better.com/fonts/graphik/Graphik-Bold-Web.eot');
+  src: url('https://media.better.com/fonts/graphik/Graphik-Bold-Web.eot?#iefix') format('embedded-opentype'),
+       url('https://media.better.com/fonts/graphik/Graphik-Bold-Web.woff2') format('woff2'),
+       url('https://media.better.com/fonts/graphik/Graphik-Bold-Web.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://media.better.com/fonts/graphik/Graphik-Semibold-Web.eot');
+  src: url('https://media.better.com/fonts/graphik/Graphik-Semibold-Web.eot?#iefix') format('embedded-opentype'),
+       url('https://media.better.com/fonts/graphik/Graphik-Semibold-Web.woff2') format('woff2'),
+       url('https://media.better.com/fonts/graphik/Graphik-Semibold-Web.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://media.better.com/fonts/graphik/Graphik-Medium-Web.eot');
+  src: url('https://media.better.com/fonts/graphik/Graphik-Medium-Web.eot?#iefix') format('embedded-opentype'),
+       url('https://media.better.com/fonts/graphik/Graphik-Medium-Web.woff2') format('woff2'),
+       url('https://media.better.com/fonts/graphik/Graphik-Medium-Web.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://media.better.com/fonts/graphik/Graphik-Regular-Web.eot');
+  src: url('https://media.better.com/fonts/graphik/Graphik-Regular-Web.eot?#iefix') format('embedded-opentype'),
+       url('https://media.better.com/fonts/graphik/Graphik-Regular-Web.woff2') format('woff2'),
+       url('https://media.better.com/fonts/graphik/Graphik-Regular-Web.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://media.better.com/fonts/graphik/Graphik-Light-Web.eot');
+  src: url('https://media.better.com/fonts/graphik/Graphik-Light-Web.eot?#iefix') format('embedded-opentype'),
+       url('https://media.better.com/fonts/graphik/Graphik-Light-Web.woff2') format('woff2'),
+       url('https://media.better.com/fonts/graphik/Graphik-Light-Web.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('https://media.better.com/fonts/graphik/Graphik-Thin-Web.eot');
+  src: url('https://media.better.com/fonts/graphik/Graphik-Thin-Web.eot?#iefix') format('embedded-opentype'),
+       url('https://media.better.com/fonts/graphik/Graphik-Thin-Web.woff2') format('woff2'),
+       url('https://media.better.com/fonts/graphik/Graphik-Thin-Web.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+:root {
+  /* Type scale */
+  --bsk-font-size-0: 9.989px;
+  --bsk-font-size-1: 11.237px;
+  --bsk-font-size-2: 12.642px;
+  --bsk-font-size-3: 14.222px;
+  --bsk-font-size-4: 16px;
+  --bsk-font-size-5: 18px;
+  --bsk-font-size-6: 20.25px;
+  --bsk-font-size-7: 22.781px;
+  --bsk-font-size-8: 25.629px;
+  --bsk-font-size-9: 28.833px;
+  --bsk-font-size-10: 32.437px;
+  --bsk-font-size-11: 36.491px;
+  --bsk-font-size-12: 41.053px;
+  --bsk-font-size-13: 46.184px;
+  --bsk-font-size-14: 51.957px;
+  --bsk-font-size-15: 58.452px;
+  --bsk-font-size-16: 65.758px;
+  --bsk-font-size-17: 73.978px;
+  --bsk-font-size-18: 83.225px;
+  --bsk-font-size-19: 93.628px;
+  --bsk-font-size-20: 105.332px;
+
+  /* Font Weight */
+  --bsk-font-weight-200: 200;
+  --bsk-font-weight-300: 300;
+  --bsk-font-weight-400: 400;
+  --bsk-font-weight-500: 500;
+  --bsk-font-weight-600: 600;
+  --bsk-font-weight-700: 700;
+
+  /* Letter Spacing */
+  --bsk-letter-spacing-large-1: 0.03em;
+  --bsk-letter-spacing-large-2: 0.1em;
+  --bsk-letter-spacing-large-3: 0.15em;
+  --bsk-letter-spacing-tight-1: -0.005em;
+  --bsk-letter-spacing-tight-2: -0.01em;
+  --bsk-letter-spacing-tight-3: -0.025em;
+  --bsk-letter-spacing-tight-4: -0.035em;
+
+  /* Font Family */
+  --bsk-font-graphik: 'Graphik', sans-serif;
+  --bsk-font-roboto: 'Roboto', sans-serif;
+
+  --bsk-color-eggplant: hsla(264, 47%, 18%, 1);
+  --bsk-color-eggplant-60: hsla(264, 47%, 18%, 0.6);
+  --color-slime: hsla(166, 82%, 57%, 1);
+  --color-slime-text: hsla(166, 100%, 40%, 1);
+  --color-rouge: hsla(166, 100%, 40%, 1);
+  --bsk-color-fuchsia: hsla(327, 82%, 48%, 1);
+  --color-rouge: hsla(344, 100%, 60%, 1);
+  --bezier: cubic-bezier(0.32, 0.01, 0, 1);
+  --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}

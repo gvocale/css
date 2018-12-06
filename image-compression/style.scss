@@ -2,17 +2,32 @@
   display: grid;
   grid-template-columns: repeat(2, min-content);
   grid-column-gap: 64px;
+  margin-bottom: 128px;
+}
+
+.grid:last-child {
+  margin-bottom: 0;
 }
 
 .header {
   margin-bottom: 64px;
 }
 
-.heading {
+.h1 {
   font-family: var(--bsk-font-graphik);
   line-height: 1.2;
   letter-spacing: var(--bsk-letter-spacing-tight-3);
   font-size: var(--bsk-font-size-14);
+  font-weight: 700;
+  width: 100%;
+  max-width: 15em;
+}
+
+.h2 {
+  font-family: var(--bsk-font-graphik);
+  line-height: 1.2;
+  letter-spacing: var(--bsk-letter-spacing-tight-3);
+  font-size: var(--bsk-font-size-8);
   font-weight: 700;
   width: 100%;
   max-width: 15em;
@@ -37,6 +52,16 @@
   padding-top: 16px;
 }
 
+.small {
+  color: var(--color-eggplant-60);
+  font-size: var(--bsk-font-size-2);
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: var(--color-eggplant-60);
+}
+
 .warning {
   color: var(--color-rouge);
 }
@@ -50,7 +75,7 @@ body {
   padding-right: 5%;
   padding-top: 10%;
   padding-bottom: 10%;
-  color: var(--bsk-color-eggplant);
+  color: var(--color-eggplant);
 }
 
 @font-face {
@@ -164,8 +189,8 @@ body {
   --bsk-font-graphik: 'Graphik', sans-serif;
   --bsk-font-roboto: 'Roboto', sans-serif;
 
-  --bsk-color-eggplant: hsla(264, 47%, 18%, 1);
-  --bsk-color-eggplant-60: hsla(264, 47%, 18%, 0.6);
+  --color-eggplant: hsla(264, 47%, 18%, 1);
+  --color-eggplant-60: hsla(264, 47%, 18%, 0.6);
   --color-slime: hsla(166, 82%, 57%, 1);
   --color-slime-text: hsla(166, 100%, 40%, 1);
   --color-rouge: hsla(166, 100%, 40%, 1);

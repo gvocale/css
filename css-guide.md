@@ -381,5 +381,5 @@ Filament group post: https://www.filamentgroup.com/lab/compressive-images.html
 
 - [8.2](#Image-compression--imageoptim) ImageOptim
 
-Example: https://jsfiddle.net/gvocale/pcwudrmc/70450/
+Example: https://jsfiddle.net/gvocale/eLcxa2k7/21/
 

@@ -1,18 +1,18 @@
-.ProfilePicture {
+.Figure {
   display: block;
   width: 20vw;
   position: relative;
   margin-bottom: 32px;
 }
 
-.ProfilePicture::after {
+.Figure::after {
   content: '';
   padding-top: 100%;
   width: 100%;
   display: block;
 }
 
-.ProfilePicture-img {
+.Figure-img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -25,8 +25,8 @@
 
 .Button {
   padding: 1em 2em;
-  background-color: var(--bsk-color-slime);
-  color: var(--bsk-color-eggplant);
+  background-color: var(--color-slime);
+  color: var(--color-eggplant);
   font-family: var(--bsk-font-graphik);
   font-size: var(--bsk-font-size-3);
   letter-spacing: var(--bsk-letter-spacing-tight-2);
@@ -36,11 +36,10 @@
 }
 
 .Button:hover {
-  background-color: var(--bsk-color-slime-dark);
+  background-color: var(--color-slime-dark);
 }
 
-
-body {
+.Promo {
   display: flex;
   flex-direction: column;
   align-items: center;

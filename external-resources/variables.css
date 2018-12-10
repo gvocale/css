@@ -4,9 +4,30 @@ body {
   padding-top: 10%;
   padding-bottom: 10%;
   color: var(--color-eggplant);
+  font-family: var(--bsk-font-graphik);
 }
 
-.eyebrow {
+.Header {
+  margin-bottom: 120px;
+}
+
+.Grid {
+  margin-bottom: 120px;
+}
+
+.Eyebrow {
+  font-family: var(--bsk-font-graphik);
+  line-height: 1.2;
+  letter-spacing: var(--bsk-letter-spacing-tight-3);
+  font-size: var(--bsk-font-size-6);
+  color: var(--color-eggplant-60);
+  font-weight: 600;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.H1 {
   font-family: var(--bsk-font-graphik);
   line-height: 1.2;
   letter-spacing: var(--bsk-letter-spacing-tight-3);
@@ -14,19 +35,11 @@ body {
   font-weight: 700;
   width: 100%;
   max-width: 15em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
 }
 
-.h1 {
-  font-family: var(--bsk-font-graphik);
-  line-height: 1.2;
-  letter-spacing: var(--bsk-letter-spacing-tight-3);
-  font-size: var(--bsk-font-size-14);
-  font-weight: 700;
-  width: 100%;
-  max-width: 15em;
-}
-
-.h2 {
+.H2 {
   font-family: var(--bsk-font-graphik);
   line-height: 1.2;
   letter-spacing: var(--bsk-letter-spacing-tight-3);
@@ -34,6 +47,63 @@ body {
   font-weight: 700;
   width: 100%;
   max-width: 15em;
+}
+
+.Subhead {
+  line-height: 1.4;
+  letter-spacing: var(--bsk-letter-spacing-tight-2);
+  font-size: var(--bsk-font-size-4);
+  color: var(--color-eggplant-60);
+  font-weight: 400;
+  max-width: 15em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.Subhead:last-child {
+  margin-bottom: 0;
+}
+
+.Link {
+  color: var(--color-slime-text);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.Navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Previous,
+.Next {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  font-size: var(--bsk-font-size-14);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.Previous {
+  background-color: var(--color-gainsboro-dark);
+  color: var(--color-eggplant);
+}
+
+.Previous:hover {
+  background-color: var(--color-gainsboro-darker);
+}
+
+.Next {
+  background-color: var(--color-slime);
+  color: var(--color-eggplant);
+}
+
+.Next:hover {
+  background-color: var(--color-slime-dark);
 }
 
 :root {
@@ -90,6 +160,9 @@ body {
   --color-rouge: hsla(166, 100%, 40%, 1);
   --color-fuchsia: hsla(327, 82%, 48%, 1);
   --color-rouge: hsla(344, 100%, 60%, 1);
+  --color-gainsboro: hsla(240, 11%, 96%, 1);
+  --color-gainsboro-dark: hsla(240, 11%, 92%, 1);
+  --color-gainsboro-darker: hsla(240, 11%, 85%, 1);
 
   /* Animation */
   --bezier: cubic-bezier(0.32, 0.01, 0, 1);

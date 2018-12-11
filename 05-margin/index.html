@@ -1,13 +1,23 @@
-<h1 class="heading">Why we're Better</h1>
-<p class="paragraph">We make home financing affordable. Apply for a mortgage anytime, anywhere, on any device, and we’ll analyze bank and mortgage company data to find you the best rate.</p>
+don't bake margins into components:
+Example: add margin-bottom: 12px to a Button, cause never want anything to be close to that button. Now if I want to use the Button in the nav, now the nav is taller because there is that margin baked into the button, unless I find a way to remove that button overriding it.
 
-<div class="shapes">
-  <div class="triangle"></div>
-  <div class="cross"></div>
-  <div class="square"></div>
-</div>
+If you have to remove a style from a class, then you should have not added in first place. You should remove it from the original class, and put it on a new class
 
-<div class="Navigation">
-  <a class="Previous" href="https://jsfiddle.net/gvocale/m8g6qfrc/" target="_blank">Typography</a>
-  <a class="Next" href="" target="_blank">Component</a>
-</div>
+.Button {
+  margin-bottom: 12px;
+}
+
+.Navigation .Button {
+  margin-bottom: 0;
+}
+
+.Button {
+
+}
+
+.Button--sidebar {
+  margin-bottom: 12px;
+}
+
+
+The margin is usually defined by what's around the component. A margin of a button next to another button is different then the margin next to some text, an icon, etc.. Baking in the component the margin soon or later will need to be overridden. Better to use a scale and tweak the margin case by case. 8px scale

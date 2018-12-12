@@ -1,8 +1,13 @@
-<header class="header">
-    <h1 class="h1">
-      <span class="handwritten">Separate concerns</span>
-      <span class="nospace"><span class="strikethrough">Cascading</span>Style Sheet</span>
-    </h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../variables.css">
+</head>
+<body>
+  <header class="Header">
+    <h1 class="H1">
+      <span class="H1-handwritten">Separate concerns</span>
+      <span class="nospace"><span class="strikethrough">Cascading</span>Style Sheet</span></h1>
     <p class="subhead">CSS (Cascading Style Sheet) becomes easier when you STOP using cascading.</p>
     <p class="why">Why? Think separation of concerns, single responsability principle, loose coupling. Build a whole bunch of tiny little CSS modules that:</p>
     <ul>
@@ -10,10 +15,20 @@
       <li>Need to be able to operate on their own</li>
       <li>Can't be too dependent on what's above them or below them</li>
     </ul>
+    ** Add visual example here of visual margin difference on headline and color blocks **
   </header>
 
-  <div class="grid">
-
-
-    ** Add visual example here of visual margin difference on headline and color blocks **
+  <div class="Grid">
+    <div class="Promo">
+      <figure class="Figure" data-qa="profile-picture">
+        <img class="Figure-img" src="https://media.better.com/components/lets-talk/better-employee-elizabeth-700w.jpg" alt="Profile pic">
+      </figure>
+      <div class="Button" data-js="Button">Schedule a call</div>
+    </div>
   </div>
+
+  <div class="Navigation">
+    <a class="Previous" href="https://jsfiddle.net/gvocale/m8g6qfrc/" target="_blank">Typography</a>
+    <a class="Next" href="../02-style-only-classes/index.html" target="_blank">Style only classes</a>
+  </div>
+</body>
